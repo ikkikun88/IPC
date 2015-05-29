@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane stylesheets="@../app/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vuelo.entregable2.view.SampleController">
+   <left>
+      <AnchorPane>
+         <children>
+            <TableView fx:id="tabla" prefHeight="534.0" prefWidth="275.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="c1" minWidth="100.0" prefWidth="100.0" text="Aeropuerto" />
+                <TableColumn fx:id="c2" minWidth="35.0" prefWidth="40.0" text="Code" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane>
+         <children>
+            <AnchorPane prefHeight="524.0" prefWidth="603.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <TabPane prefHeight="524.0" prefWidth="603.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
+                    <tabs>
+                      <Tab fx:id="tabSalidas" text="Salidas">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="tablaSalidas" prefHeight="495.0" prefWidth="651.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn fx:id="vueloSalidas" prefWidth="75.0" text="Vuelo" />
+                                        <TableColumn fx:id="fechaSalidas" prefWidth="75.0" text="Fecha" />
+                                          <TableColumn fx:id="horaSalidas" prefWidth="75.0" text="Hora" />
+                                          <TableColumn fx:id="retrasoSalidas" prefWidth="75.0" text="Retraso" />
+                                          <TableColumn fx:id="companiaSalidas" prefWidth="75.0" text="Compañía" />
+                                          <TableColumn fx:id="tipoSalidas" prefWidth="75.0" text="Tipo" />
+                                          <TableColumn fx:id="DestinoSalidas" prefWidth="75.0" text="Destino" />
+                                          <TableColumn fx:id="modeloSalidas" prefWidth="75.0" text="Modelo" />
+                                      </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab fx:id="tabLlegadas" text="Llegadas">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="tablaLlegadas" prefHeight="505.0" prefWidth="603.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn fx:id="vueloLlegadas" prefWidth="75.0" text="Vuelo" />
+                                        <TableColumn fx:id="fechaLlegadas" prefWidth="75.0" text="Fecha" />
+                                          <TableColumn fx:id="horaLlegadas" prefWidth="75.0" text="Hora" />
+                                          <TableColumn fx:id="retrasoLlegadas" prefWidth="75.0" text="Retraso" />
+                                          <TableColumn fx:id="companiaLlegadas" prefWidth="75.0" text="Compañía" />
+                                          <TableColumn fx:id="tipoLlegadas" prefWidth="75.0" text="Tipo" />
+                                          <TableColumn fx:id="origenLlegadas" prefWidth="75.0" text="Origen" />
+                                          <TableColumn fx:id="modeloLlegadas" prefWidth="75.0" text="Modelo" />
+                                      </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab fx:id="tabGraficas" text="Gráficas">
+                           <content>
+                              <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                 <center>
+                                    <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                                      <tabs>
+                                        <Tab fx:id="tabRetraso" text="Retraso Medio">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <BarChart fx:id="retrasoAeropuertos" prefHeight="476.0" prefWidth="603.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <xAxis>
+                                                          <CategoryAxis side="BOTTOM" />
+                                                        </xAxis>
+                                                        <yAxis>
+                                                          <NumberAxis side="LEFT" />
+                                                        </yAxis>
+                                                      </BarChart>
+                                                   </children>
+                                                </AnchorPane>
+                                          </content>
+                                        </Tab>
+                                        <Tab fx:id="tabDias" text="Vuelos Por Dias">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <LineChart id="tabla-vuelos" fx:id="vuelosPorDia" prefHeight="476.0" prefWidth="603.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <xAxis>
+                                                          <CategoryAxis side="BOTTOM" />
+                                                        </xAxis>
+                                                        <yAxis>
+                                                          <NumberAxis side="LEFT" />
+                                                        </yAxis>
+                                                      </LineChart>
+                                                   </children>
+                                                </AnchorPane>
+                                          </content>
+                                        </Tab>
+                                          <Tab fx:id="tabAeropuertos" text="Vuelos Por Aeropuertos">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <PieChart fx:id="vuelosAeropuertos" prefHeight="476.0" prefWidth="603.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                            </content>
+                                          </Tab>
+                                      </tabs>
+                                    </TabPane>
+                                 </center>
+                                 <bottom>
+                                    <HBox prefHeight="34.0" prefWidth="603.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label text="Número aeropuertos a mostrar:">
+                                             <opaqueInsets>
+                                                <Insets left="10.0" />
+                                             </opaqueInsets>
+                                             <HBox.margin>
+                                                <Insets left="20.0" right="20.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="numAeropuertos" prefHeight="25.0" prefWidth="71.0" />
+                                       </children>
+                                    </HBox>
+                                 </bottom>
+                              </BorderPane>
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <VBox prefHeight="83.0" prefWidth="851.0" style="-fx-background-color: #d8d8d8;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Filtrado por fechas:">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" top="10.0" />
+               </VBox.margin></Label>
+            <HBox>
+               <children>
+                  <Label text="Fecha inicio:">
+                     <HBox.margin>
+                        <Insets left="20.0" right="10.0" top="5.0" />
+                     </HBox.margin></Label>
+                  <DatePicker fx:id="fechaInicio" style="-fx-background-color: #2e2e2e;">
+                     <opaqueInsets>
+                        <Insets bottom="25.0" />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets bottom="25.0" />
+                     </HBox.margin></DatePicker>
+                  <Label alignment="CENTER" text="Fecha fin:">
+                     <HBox.margin>
+                        <Insets left="10.0" right="20.0" top="5.0" />
+                     </HBox.margin></Label>
+                  <DatePicker fx:id="fechaFin" style="-fx-background-color: #2e2e2e;" />
+                  <CheckBox fx:id="conFechas" mnemonicParsing="false" text="Filtrar">
+                     <HBox.margin>
+                        <Insets left="20.0" top="8.0" />
+                     </HBox.margin></CheckBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Ayuda">
+            <items>
+                  <MenuItem fx:id="menuFuente" mnemonicParsing="false" onAction="#handleFuente" text="Info" />
+              <MenuItem fx:id="menuSobre" mnemonicParsing="false" onAction="#handleAbout" text="Acerca De..." />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
